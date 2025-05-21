@@ -1,0 +1,80 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+    <h1>{{ username }}</h1>
+    {% if user != username %}
+        {% if not is_following %}
+            <form action="{% url 'profile_page' username %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" name="follow">Follow</button>
+            </form>
+        {% else %}  
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" name="unfollow">Unfollow</button>
+            </form>
+        {% endif %}
+        
+    {% endif %}
+
+    <h4>Followers: {{ followers }} </h4>
+    <h4>Following: {{ following }} </h4>
+    
+    {% for post in posts %}
+        <div class="post list-group-item">
+            <p>{{ post.user.username }} -{{ post.user.email }}</p>
+            <p>{{ post.content }}</p>
+            <p>{{ post.date }}</p>
+            
+            <button class="like-btn" data-post-id="{{ post.id }}">
+                {% if request.user in post.likes.all %}
+                    Unlike
+                {% else %}
+                    Like
+                {% endif %}
+            </button>
+            <span class="like-count" id="like-count-{{ post.id }}">{{ post.like_count }}</span> Likes
+        </div>
+    {% endfor %}
+
+    <nav aria-label="Page navigation example"></nav>
+        <ul class="pagination justify-content-center">
+            {% if posts.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; Previous</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+            {% endif %}
+   
+            {% for num in posts.paginator.page_range %}
+                <li class="page-item {% if posts.number == num %}active{% endif %}">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+    
+            {% if posts.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">Next &raquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/edit.js' %}"></script>
+{% endblock %}

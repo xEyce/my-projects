@@ -1,0 +1,9 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Random Page
+{% endblock %}
+
+{% block body %}
+    <h1>{{ random_entry | safe }}</h1>
+{% endblock %}

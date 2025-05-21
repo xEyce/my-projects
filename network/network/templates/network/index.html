@@ -1,0 +1,86 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+    <!-- Create Post Section -->
+    <h1>Create a Post</h1>
+    <form action="{% url 'create_post' %}" method="POST">
+        {% csrf_token %}
+        <textarea placeholder="What is happening?!" name="content"></textarea>
+        <button class="btn btn-info" id="post_btn">POST</button>
+    </form>
+    <hr />
+
+    <!-- List of all Posts Section -->
+    <h2>All Post</h2>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post list-group-item">
+                <p><a href="{% url 'profile_page' post.user.username %}">{{ post.user.username }}</a> -{{ post.user.email }}</p>
+                <p id="content-view-{{ post.id }}">{{ post.content }}</p>
+                <div id="edit-view-{{ post.id }}" style="display: none;">
+                    <textarea id="edit-content-{{ post.id }}">{{ post.content }}</textarea>
+                    <button class="save-btn" data-post-id="{{ post.id }}">Save</button>
+                </div>
+
+                <p>{{ post.date }}</p>
+
+                <button class="like-btn" data-post-id="{{ post.id }}">
+                    {% if request.user in post.likes.all %}
+                        Unlike
+                    {% else %}
+                        Like
+                    {% endif %}
+                </button>
+                <span class="like-count" id="like-count-{{ post.id }}">{{ post.like_count }}</span> Likes
+
+                {% if post.user == request.user %}
+                <button class="edit-btn" data-post-id="{{ post.id }}">Edit</button>
+                {% endif %}
+            </div>
+            
+        {% endfor %}
+    </div>
+
+    <!-- Paginator 'Prev/Next' -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if posts.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; Previous</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+            {% endif %}
+   
+            {% for num in posts.paginator.page_range %}
+                <li class="page-item {% if posts.number == num %}active{% endif %}">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+    
+            {% if posts.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">Next &raquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+      
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/edit.js' %}"></script>
+{% endblock %}

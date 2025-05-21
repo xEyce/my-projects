@@ -1,0 +1,20 @@
+textarea {
+    min-height: 400px;
+}
+
+.entry-style {
+    border: 5px solid black;
+}
+
+.read {
+    background-color: rgb(211, 211, 211);
+}
+
+.unread {
+    background-color: white;
+}
+
+p {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
