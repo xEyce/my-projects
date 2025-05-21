@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gacha Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Event Banner: Zani</h1>
+    <p id="asteriteCount" contenteditable="true">0</p>
+    <p id="pityCount">Pity: 0</p>
+    <p id="won5050">Won: 0</p>
+    <p id="lose5050">Lose: 0</p>
+    <p id="copy">Copy: 0</p>
+
+    <form id="inputForm">
+        <h1>Top Up</h1>
+        <input type="text" id="userInput" placeholder="Enter your asterites">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="container" id="gachaScreen" style="display: block;">
+        <div class="coverImg">
+        </div>
+    </div>
+    <div class="summonBtn">
+        <button id="singleSummonBtn">1x Summon</button>
+        <button id="multiSummonBtn">10x Summon</button>
+    </div>
+
+    <div class="container" id="resultScreen" style="display: none;">
+        <!-- <div class="summonCard">
+            
+            <img id="character">
+           
+        </div> -->
+    </div>
+    <button id="backBtn" style="display: none;">Back</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
