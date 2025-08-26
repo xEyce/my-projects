@@ -1,0 +1,138 @@
+
+/* 
+.card {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
+}
+
+.card-image{
+  max-width: 60%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card-title{
+  font-style: Arial, sans-serif;
+  margin: 0;
+  color: hsl(0, 0%, 20%);
+}
+
+.card-text{
+  font-style: Arial, sans-serif;
+  color: hsl(0, 0%, 30%);
+} */
+
+/* TO-DO-LIST */
+/* .to-do-list{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+h1{
+  font-size: 4rem;
+}
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.5 ease;
+}
+
+.add-button{
+  background-color: hsl(140, 100%, 50%);
+}
+.add-button:hover{
+  background-color: hsl(140, 100%, 40%);
+}
+
+.delete-button{
+  background-color: hsl(4, 100%, 50%);
+}
+.delete-button:hover{
+  background-color: hsl(4, 100%, 40%);
+}
+
+.up-button{
+  background-color: hsl(187, 100%, 50%);
+}
+.up-button:hover{
+  background-color: hsl(187, 100%, 40%);
+}
+
+.down-button{
+  background-color: hsl(49, 100%, 50%);
+}
+.down-button:hover{
+  background-color: hsl(49, 100%, 40%);
+}
+
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid hsl(0, 0%, 80%, 0.5);
+  color: hsla(0, 0%, 0%, 0.5);
+}
+ol{
+  padding: 0;
+}
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: hsla(0, 0%, 90%);
+  margin-bottom: 5px;
+  border: 3px solid hsl(0, 0%, 80%, 0.5);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text{
+  flex: 1;
+}
+.delete-button, .up-button, .down-button{
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
+} */
+
+/* CLOCK */
+body{
+  background-image: url(assets/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+.clock-container{
+  backdrop-filter: blur(5px);
+  width: 100vw;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.clock{
+  color: white;
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: monospace;
+  text-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.75);
+}
