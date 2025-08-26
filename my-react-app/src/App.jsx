@@ -19,10 +19,6 @@ function App() {
     <>
       
       <DigitalClock />
-      <DigitalClock />
-      <DigitalClock />
-      <DigitalClock />
-      
       
     </>
 
