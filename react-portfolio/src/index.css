@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand */
+  --color-primary: #B3B4BD;
+  --color-secondary: #9333ea;
+
+  /* Backgrounds */
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #000000;
+
+  /* Text */
+  --color-text: #000000;
+  --color-text-muted: #ffffff;
+
+  /* Border */
+  --color-border: #e5e7eb;
+
+  /* States */
+  --color-success: #16a34a;
+  --color-warning: #facc15;
+  --color-error: #dc2626;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    color: var(--color-text); /* light mode text */
+  }
+
+  .dark html,
+  .dark body,
+  .dark #root {
+    color: var(--color-text-muted); /* dark mode text */
+  }
+}
+
+
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
