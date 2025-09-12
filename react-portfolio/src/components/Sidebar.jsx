@@ -21,7 +21,7 @@ function Sidebar() {
 
   return (
 
-    <aside className="flex flex-col bg-bg-light w-[20vw] bg-bg-primary m-6 rounded-3xl dark:bg-gray-600">
+    <aside className="flex flex-col bg-bg-light w-[20vw] bg-bg-primary m-6 rounded-3xl dark:bg-container-dark">
       <div className="flex flex-col w-full items-center mt-6 px-10">
         <img src={profilePic} className="rounded-full w-36 h-36"></img>
         <h2 className="mt-2">Adrian Clifford Evangelio</h2>

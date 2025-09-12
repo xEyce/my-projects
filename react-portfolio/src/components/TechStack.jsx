@@ -30,7 +30,7 @@ function TechStack() {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-bg-light dark:bg-gray-600 m-6 p-4 rounded-3xl">
+    <div className="relative overflow-hidden bg-bg-light dark:bg-container-dark m-6 p-4 rounded-3xl">
       {/* First Row (left scroll) */}
       <div className="flex animate-marquee">
         {techStack.concat(techStack).map((tech, index) => (

@@ -5,13 +5,14 @@
   --color-primary: #B3B4BD;
   --color-secondary: #9333ea;
 
-  /* Backgrounds */
+  --color-bg-dark: #121212;        /* Page background */
+  --color-container-dark: #1E1E1E; /* Sidebar, cards, sections */
+  --color-border-dark: #2E2E2E;    /* Subtle dividers */
   --color-bg-light: #ffffff;
-  --color-bg-dark: #000000;
 
   /* Text */
   --color-text: #000000;
-  --color-text-muted: #ffffff;
+  --color-text-muted: #E5E5E5;
 
   /* Border */
   --color-border: #e5e7eb;
