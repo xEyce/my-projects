@@ -21,13 +21,15 @@ function TechStack() {
         { name: "Laravel", logo: laravelLogo },
         { name: "ReactJS", logo: reactLogo },
         { name: "Django", logo: djangoLogo },
+    ];
+
+    const techStack2 = [
         { name: "MySQL", logo: mysqlLogo },
         { name: "SQLite", logo: sqliteLogo },
         { name: "TailwindCSS", logo: tailwindLogo },
         { name: "Bootstrap", logo: bootstrapLogo },
         { name: "VSCode", logo: vscodeLogo },
         { name: "Github", logo: githubLogo },
-     
     ];
     
     return (
@@ -37,7 +39,22 @@ function TechStack() {
                 {techStack.concat(techStack).map((tech, index) => (
                 <div
                     key={index}
-                    className="flex items-center justify-center min-w-[150px] mx-6"
+                    className="flex items-center justify-center min-w-[30px] mx-6"
+                >
+                    <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className="w-16 h-16 object-contain"
+                    />
+                    
+                </div>
+                ))}
+            </div>
+            <div className="flex animate-marquee2">
+                {techStack2.concat(techStack2).map((tech, index) => (
+                <div
+                    key={index}
+                    className="flex items-center justify-center min-w-[30px] mx-6"
                 >
                     <img
                     src={tech.logo}
