@@ -38,23 +38,22 @@
 }
 
 
-
 @keyframes marquee {
   0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-50%); } /* only move half, since content is doubled */
 }
 
-@keyframes marquee2 {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(50%); }
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
 }
 
 .animate-marquee {
   display: flex;
-  animation: marquee 15s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
-.animate-marquee2 {
+.animate-marquee-reverse {
   display: flex;
-  animation: marquee2 15s linear infinite;
+  animation: marquee-reverse 20s linear infinite;
 }
