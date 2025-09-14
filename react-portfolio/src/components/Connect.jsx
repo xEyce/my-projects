@@ -2,7 +2,7 @@
 function Connect() {
     return (
         <div className="flex flex-col bg-bg-light w-[20vw] bg-bg-primary m-6 rounded-3xl dark:bg-container-dark">
-            <h2>Contact Me</h2>
+            <h2 className="flex align-center m-4 text-4xl">Contact Me</h2>
             <div className="flex items-center justify-center space-x-5 h-60">
                 <a href="https://x.com/adrianvangelio" target="_blank" className="text-5xl">
                     <i class="fab fa-twitter"></i>
