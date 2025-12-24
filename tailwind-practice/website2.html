@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Tailwind</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-white flex flex-col dark:bg-gray-800">
+
+        <!-- NAVBAR -->
+        <div class="flex justify-between px-6 py-4 shadow-lg
+                    bg-white text-black
+                    dark:bg-gray-900 dark:text-white">
+            <h1 class="text-lg font-bold tracking-widest">MyWebsite</h1>
+            <nav class="flex gap-4 items-center">
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+
+                <button
+                  class="ml-4 px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-500"
+                  onclick="document.documentElement.classList.toggle('dark')"
+                >
+                  Toggle Theme
+                </button>
+            </nav>
+        </div>
+
+        <!-- MAIN -->
+        <div class="flex-1"></div>
+
+        <!-- FOOTER -->
+        <div class="bg-gray-100 text-gray-700
+                    dark:bg-gray-900 dark:text-gray-300
+                    text-center text-sm p-6">
+            &copy; 2025 My Website. All rights reserved.
+        </div>
+
+    </div>
+  </body>
+</html>
