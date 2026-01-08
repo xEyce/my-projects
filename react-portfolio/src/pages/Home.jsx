@@ -8,7 +8,7 @@ function Card() {
           <a href="#" className="hover:bg-gray-700 rounded px-3 py-2">Dashboard</a>
           <a href="#" className="hover:bg-gray-700 rounded px-3 py-2">Profile</a>
           <a href="#" className="hover:bg-gray-700 rounded px-3 py-2">Settings</a>
-          <a href="#" className="hover:bg-gray-700 rounded px-3 py-2">Logout</a>
+          
         </nav>
       </aside>
 
